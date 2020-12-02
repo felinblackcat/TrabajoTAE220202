@@ -1,6 +1,8 @@
 ---
 title: "TAE2020Chapter4"
-output: html_document
+output:
+  html_document:
+    css: "style.css" 
 ---
 
 ```{r setup, include=FALSE}
@@ -418,6 +420,7 @@ dcast(data=performances, method ~ round, value.var="test.err")
 ```
 
 ```{r}
+library(ggplot2)
 ggplot(data=performances, aes(x=method,y=test.err)) + geom_bar(stat="identity", aes(fill=method)) + coord_flip() + facet_grid(round ~ .)
 ```
 
